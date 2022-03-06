@@ -1,4 +1,6 @@
 class Link < ApplicationRecord
-  validates_presence_of :lookup_code, :original_url
-  validates_uniqueness_of :lookup_code
+  validates :lookup_code, presence: true, uniqueness: true
+  validates :original_url, presence: true
+  validates :original_url, format: { with: URI.regexp, message: "Invalid URL format" }
+
 end

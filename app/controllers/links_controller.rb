@@ -19,7 +19,7 @@ class LinksController < ApplicationController
     #@link = Link.new(link_params)
     shortener = Shortener.new(link_params)
     @link = shortener.generate_short_link
-    
+
     if @link.save
       redirect_to link_url(@link), notice: "Link was successfully created."
     else
@@ -47,6 +47,6 @@ class LinksController < ApplicationController
     end
 
     def link_params
-      params.require(:link).permit(:lookup_code, :original_url)
+      params.require(:link).permit(:original_url)
     end
 end
