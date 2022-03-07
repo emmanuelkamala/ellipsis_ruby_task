@@ -1,24 +1,49 @@
-# README
+# Ellipsis Ruby Task
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a build of a URL Shortener, the app creates a shortened URL of a long URL, then users can also create an account and be able to manage their links.
 
-Things you may want to cover:
+## Built With
 
-* Ruby version
+- Ruby 3
+- Rails 7
+- Postgresql
+- Bootstrap 5
 
-* System dependencies
+## Live Demo
 
-* Configuration
+Coming soon...
 
-* Database creation
+## Getting Started
 
-* Database initialization
+To get a local copy up and running follow these simple example steps.
 
-* How to run the test suite
+### Prerequisites
+You need to have Ruby 3 or above and Rails version 7 or above installed
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+### Setup
 
-* ...
+# Install
+Clone the repo and then install the needed gems:
+
+ bundle install
+
+ # Create and Migrate the database:
+
+ rails db:create<br>
+ rails db:migrate
+
+ # Run the app in a local server:
+
+ - rails server <br />
+
+ - Open up any browser and visit this link: http://localhost:3000
+
+
+## Author
+
+👤 **Author**
+
+- Github: [@githubhandle](https://github.com/emmanuelkamala)
+- Twitter: [@twitterhandle](https://twitter.com/ejkamala)
+- Linkedin: [linkedin](https://linkedin.com/in/emmanuelkamala)
