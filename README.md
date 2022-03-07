@@ -11,7 +11,7 @@ This is a build of a URL Shortener, the app creates a shortened URL of a long UR
 
 ## Live Demo
 
-Coming soon...
+<a href="https://ellipsisrubytask.herokuapp.com">Live link</a>
 
 ## Getting Started
 
