@@ -6,6 +6,10 @@ class LinksController < ApplicationController
   end
 
   def show
+    url_extension = @link.id.to_s(36)
+    @short_url = "http://localhost:3000/#{url_extension}"
+
+    #redirect_to @link.original_url, allow_other_host: true
   end
 
   def new
@@ -16,15 +20,19 @@ class LinksController < ApplicationController
   end
 
   def create
-    #@link = Link.new(link_params)
-    shortener = Shortener.new(link_params)
-    @link = shortener.generate_short_link
+    @link = Link.new(link_params)
 
     if @link.save
       redirect_to link_url(@link), notice: "Link was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
+  end
+  
+  def send_to_url
+    id = params[:short_url].to_i(36)
+    link = Link.find(id)
+    redirect_to link.original_url, allow_other_host: true
   end
 
   def update
@@ -47,6 +55,6 @@ class LinksController < ApplicationController
     end
 
     def link_params
-      params.require(:link).permit(:original_url)
+      params.require(:link).permit(:original_url, :expiration)
     end
 end
