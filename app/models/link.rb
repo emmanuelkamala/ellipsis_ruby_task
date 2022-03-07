@@ -1,7 +1,8 @@
 class Link < ApplicationRecord
-  # before_create :set_expiration_time
+  validates :original_url, presence: true
 
-  # def set_expiration_time
-  #   self.expiration =  Time.now + 1.minute
-  # end
+  scope :expires_5_days, lambda { where('created at > ?', 5.days.ago) }
+
+  belongs_to :user
+
 end

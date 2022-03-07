@@ -14,7 +14,7 @@
       </p>
 
       <script>
-        setTimeout(function(){ window.location.href = '<%= @link.original_url %>' }, 10000);
+        setTimeout(function(){ window.location.href = '<%= @link.original_url %>', target="_blank" }, 10000);
       </script>
 
       <%= link_to 'Edit', edit_link_path(@link), class: 'btn btn-success text-light' %> |
