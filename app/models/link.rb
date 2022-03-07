@@ -1,5 +1,5 @@
 class Link < ApplicationRecord
-  validates :original_url, presence: true
+  validates :original_url, presence: true, url: true
 
   scope :expires_5_days, lambda { where('created at > ?', 5.days.ago) }
 
