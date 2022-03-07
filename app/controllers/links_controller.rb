@@ -7,7 +7,7 @@ class LinksController < ApplicationController
 
   def show
     url_extension = @link.id.to_s(36)
-    @short_url = "http://localhost:3000/#{url_extension}"
+    @short_url = "https://ellipsisrubytask.herokuapp.com/#{url_extension}"
   end
 
   def new
